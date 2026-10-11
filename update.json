@@ -1,0 +1,9 @@
+{
+  "versionCode": 2,
+  "versionName": "0.2.0",
+  "notes": "Alkalmazáson belüli frissítéskeresés, ellenőrzött APK-letöltés és Android-telepítés. A képernyőrögzítés telepítés előtt szabályosan leáll. A valódi OCR és a helyi napló megmaradt; betanított játékobjektum-modell még nincs.",
+  "apkUrl": "https://github.com/Zalan21321/red-galaxy-updates/releases/download/v0.2.0/RedGalaxyVisionAssistant-0.2.0.apk",
+  "sha256": "77cfd56a30b8db34e6d01879b280105126149e4a9fbe778b52a4d4251260c1dd",
+  "sizeBytes": 228632984,
+  "minSdk": 29
+}
