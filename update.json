@@ -1,9 +1,9 @@
 {
-  "versionCode": 2,
-  "versionName": "0.2.0",
-  "notes": "Alkalmazáson belüli frissítéskeresés, ellenőrzött APK-letöltés és Android-telepítés. A képernyőrögzítés telepítés előtt szabályosan leáll. A valódi OCR és a helyi napló megmaradt; betanított játékobjektum-modell még nincs.",
-  "apkUrl": "https://github.com/Zalan21321/red-galaxy-updates/releases/download/v0.2.0/RedGalaxyVisionAssistant-0.2.0.apk",
-  "sha256": "77cfd56a30b8db34e6d01879b280105126149e4a9fbe778b52a4d4251260c1dd",
-  "sizeBytes": 228632984,
+  "versionCode": 3,
+  "versionName": "0.3.0",
+  "notes": "# Red Galaxy Vision Assistant 0.3.0\n\nÚj, alapból kikapcsolt **kísérleti NPC-harc** lap, telefonos kalibrálással.\n\n- Külön kérhető valódi játékpillanatkép, csak memóriában.\n- Képen kijelölhető OCR-területek, megengedett NPC-nevek, külön NPC-jelölés, kijelölési eltolás és támadógomb.\n- Két friss, legalább 85%-os névfelismerés után kijelölési érintés; két további, kijelölés utáni pontos célpontnév + NPC-jelölés után egyszeri támadás.\n- Külön Android kisegítő szolgáltatási engedély, külön indítás, játék feletti NPC STOP gomb, 1–120 másodperces menet. Nincs automatikus újraindulás.\n- Elavult kép, megváltozott ablak, forgatás, rögzítésleállítás és időtúllépés leállítja az asszisztens új érintéseit.\n\n**Nem kész, játékban igazolt önjáró farmoló.** Nincs betanított objektummodell, kész Red Galaxy-profil, HP/pajzsvédelem, megsemmisítés- vagy jutalomigazolás. A valódi játékbeli működés telefonon még nincs ellenőrizve. Csak akkor használható, ha a célpontpanel külön, olvasható és kizárólag NPC-t jelentő szöveget mutat, a kijelölés a korábbi támadás után sem indít tüzelést, és egy támadóérintés elindítja a tüzelést. Bekapcsolva maradó, új célpontra magától továbbtüzelő játékbeli kapcsolóval a mód nem használható. Ha ilyen jelölés nincs, a módhoz további vizuális felismerő fejlesztése kell.\n\nA STOP a további asszisztensérintéseket állítja le; a játék saját, már elindított tüzelését szükség esetén kézzel kapcsold ki. Nincs kitalált felismerési eredmény. Képernyőkép és OCR-napló továbbra sem kerül hálózatra.\n\n0.2.0-ról: **Frissítés → Frissítés ellenőrzése → Letöltés → Telepítés**. A rendszer telepítési ablakát jóvá kell hagyni. A csomagnév és az aláírókulcs változatlan, az alkalmazást nem szükséges eltávolítani. Minimum Android 10.\r\n\r\n",
+  "apkUrl": "https://github.com/Zalan21321/red-galaxy-updates/releases/download/v0.3.0/RedGalaxyVisionAssistant-0.3.0.apk",
+  "sha256": "ab54a279ae915f5db7deef0ca90856f8dc6c65b8743f16f484a1d9f2fc7608f3",
+  "sizeBytes": 228798684,
   "minSdk": 29
 }
