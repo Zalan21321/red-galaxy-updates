@@ -1,36 +1,31 @@
 # Red Galaxy Vision Assistant – Android-kiadások
 
-Magyar Android-asszisztens a Red Galaxy: Online Space MMO (`com.doganaylab.redgalaxy`) mobilváltozatához. Minimum Android 10; az asszisztens csomagneve `hu.redgalaxy.visionassistant`.
+Magyar Android-asszisztens a Red Galaxy: Online Space MMO (`com.doganaylab.redgalaxy`) mobilváltozatához. Minimum Android 10. Az asszisztens csomagneve `hu.redgalaxy.visionassistant`.
 
-Aktuális kiadás: **0.4.2**, verziókód **6**.
+Aktuális kiadás: **0.5.0**, verziókód **7**.
 
-[0.4.2 APK letöltése](https://github.com/Zalan21321/red-galaxy-updates/releases/download/v0.4.2/RedGalaxyVisionAssistant-0.4.2.apk)
+[0.5.0 APK letöltése](https://github.com/Zalan21321/red-galaxy-updates/releases/download/v0.5.0/RedGalaxyVisionAssistant-0.5.0.apk)
 
-A 0.2.0 vagy újabb alkalmazásban: **Frissítés → Frissítés ellenőrzése → Frissítés letöltése → Telepítés**. A telepítést az Android ablakában jóvá kell hagyni. Újranyitás után **0.4.2 (6)** szerepeljen a főképernyőn. Ha a korábbi frissítő nem telepíti az új kiadást, használd a fenti közvetlen APK-linket. A meglévő alkalmazás frissítéseként telepítsd, eltávolítás nélkül.
+Az alkalmazásban: **Frissítés → Frissítés ellenőrzése → Frissítés letöltése → Telepítés**. Az Android telepítési ablakát jóvá kell hagyni. Újranyitás után **0.5.0 (7)** szerepeljen az appban. Ha a régi frissítő nem telepíti, használd a fenti közvetlen APK-linket, a meglévő app eltávolítása nélkül.
 
-## A frissítő javításai
+## Automatikus NPC-harc
 
-- A teljes letöltés megmarad app-újraindítás után; újbóli hash-, csomag-, verzió- és aláírás-ellenőrzés után telepíthető.
-- A telepítőből visszatéréskor és következő appindításkor a valós telepített verzió alapján jelez eredményt. A letöltés befejezése vagy a telepítő bezárása nem számít sikeres frissítésnek.
-- A változatlan régi verziót külön jelzi; a kész APK-val újrapróbálható a telepítés.
-- A hivatalos forrás alapértelmezett. Egyedi forrás továbbra is megadható, és a korábban mentett saját cím megmarad.
-- A forrás és a telefon verziója, az ellenőrzés időpontja, az elavult feed és az inkompatibilis kiadás külön látható.
+A megadott játékfotó tényleges vezérlőikonjaival keresi a joystickot, a rakétát és a lézert. Nem kell kézi koordináta vagy külön célpontpanel. A 39 megadott NPC-nevet szűrt OCR-rel követi, egyszer a hajóra koppint, két új névészlelés után tartja a lézert, legkorábban 5 másodpercenként rakétázik és véletlen irányokba húzza a joystickot.
 
-Az állandó frissítési cím:
+Indítás: OCR + képernyőmegosztási engedély → NPC-harc → Kisegítő szolgáltatás beállítása → elsőre 15 másodperc → Automatikus NPC-harc indítása. A játék felett **NPC STOP** gomb látható. Bizonytalanság, eltűnő név vagy megváltozott felület felengedést/leállást eredményez. A teljes menet legfeljebb 120 másodperc.
+
+**Kísérleti, a kapott elrendezéshez kötött funkció, telefonon még nincs igazolt harci teszt.** Nincs betanított hajómodell, vizuálisan igazolt célpontkijelölés, HP-/pajzsvédelem, ölésigazolás vagy akadálykerülés. Új érintéshez legfeljebb 350 ms-os kép kell. A keresésből a chat és a HUD kimarad. Képernyőkép és OCR-napló nem kerül hálózatra.
+
+## Frissítő
+
+A 0.4.2-ben javított frissítő megmaradt: kész letöltés visszaállítása újraellenőrzéssel, tényleges telepített verzió kijelzése, változatlan régi verzió külön jelzése. Az alapértelmezett forrás:
 
 ```text
 https://raw.githubusercontent.com/Zalan21321/red-galaxy-updates/main/update.json
 ```
 
-A korábbi 0.2–0.4.1 verzióban szükség esetén ezt add meg a HTTPS frissítési cím mezőben. A 0.1.0-ról egyszer kézzel kell telepíteni az új APK-t. A kiadott APK-k változatlanok maradnak.
+0.1.0-ról egyszer kézzel kell telepíteni a frissítőt tartalmazó APK-t. Korábbi saját forrás megmarad; a Forrásbeállítások alatt visszaállítható a hivatalos cím. A korábbi kiadott APK-k változatlanok.
 
-## Képfelismerés és harc
+[0.5.0 kiadási megjegyzések](https://github.com/Zalan21321/red-galaxy-updates/releases/tag/v0.5.0).
 
-A helyi OCR, Room-napló, a 39 megadott NPC-név és a korábbi kísérleti harci kód része a csomagnak. **A kézi beállítás nélküli automatikus harc még nem készült el.** A jelenlegi harci mód külön célpontnév-panelt igényel; a csak hajó fölött megjelenő név nem helyettesíti ezt. A felismerőhöz tényleges mobilos, kijelölt és kijelöletlen NPC-képekre van szükség.
-
-Nincs betanított hajófelismerő, térképértés, HP/pajzsvédelem vagy igazolt megsemmisítés. A játékbeli multitouch és a javított telepítési folyamat valódi telefonos tesztje még nem történt meg. Képernyőkép és OCR-napló nem kerül hálózatra.
-
-Részletek: [0.4.2 kiadási megjegyzések](https://github.com/Zalan21321/red-galaxy-updates/releases/tag/v0.4.2).
-
-Ez csak kiadási repó. A forrásprojekt, az aláírókulcs és a privát buildbeállítások nem kerülnek ide. A GitHub automatikus „Source code” archívuma ennek a repónak a fájljait tartalmazza, nem az Android-alkalmazás forrását.
-
+Ez csak kiadási repó. A forrásprojekt, teljes játékfotó, aláírókulcs és privát buildbeállítások nem kerülnek ide. A GitHub automatikus Source code archívuma ennek a repónak a fájljait tartalmazza, nem az Android-alkalmazás forrását.
