@@ -46,7 +46,7 @@ public final class MainActivity extends Activity {
         label("NPC-nevek", 18, 0xFFF1F3FA);
         label("Soronként egy nevet adj meg. Az ismétlődő neveket mentéskor összevonjuk.", 14, 0xFFBAC0D0);
         names = new EditText(this);
-        names.setId(1001);
+        names.setId(R.id.npc_names);
         names.setHint("NPC neve");
         names.setContentDescription("NPC-nevek, soronként egy");
         names.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
@@ -57,7 +57,7 @@ public final class MainActivity extends Activity {
 
         label("Tervezett menetidő (másodperc)", 18, 0xFFF1F3FA);
         duration = new EditText(this);
-        duration.setId(1002);
+        duration.setId(R.id.session_duration);
         duration.setContentDescription("Menetidő másodpercben, 1 és 120 között");
         duration.setInputType(InputType.TYPE_CLASS_NUMBER);
         duration.setText(Integer.toString(preferences.getInt("duration", 30)));
