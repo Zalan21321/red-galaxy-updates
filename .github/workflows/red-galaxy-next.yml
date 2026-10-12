@@ -1,0 +1,33 @@
+name: Android development APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/red-galaxy-next-apk]
+    paths:
+      - 'red-galaxy-next/**'
+      - '.github/workflows/red-galaxy-next.yml'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: red-galaxy-next
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Compile and lint
+        run: gradle --no-daemon assembleDebug lintDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RedGalaxyNext-development-apk
+          path: red-galaxy-next/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
