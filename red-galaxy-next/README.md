@@ -4,7 +4,8 @@
 
 ## Jelenlegi állapot
 
-Kezdeti forrásprojekt, még nem fordított és telefonon nem tesztelt.
+Kezdeti forrásprojekt. A GitHub Actions fordítás, Android lint és APK-aláírás
+ellenőrzés sikeresen lefutott. Telefonon még nem tesztelt.
 Magyar profilképernyőt, helyben mentett NPC-neveket és 1–120 másodperces
 menetidő-beállítást tartalmaz. A képfelismerés, kalibráció, célzás,
 gesztusvezérlés, játék feletti STOP és frissítéskezelés még nincs megvalósítva.
@@ -25,9 +26,17 @@ gradle --no-daemon assembleDebug lintDebug
 ```
 
 Eredmény: `app/build/outputs/apk/debug/app-debug.apk`.
-A mellékelt GitHub Actions munkafolyamat ugyanezt végzi, és letölthető
-fejlesztői APK-artifactot készít, ha a projekt egy GitHub-repóba kerül.
-A munkafolyamat még nem futott. Nyilvános kiadást nem publikál.
+A GitHub-tárolóban a projekt a `red-galaxy-next/` mappában található,
+a munkafolyamat pedig a `.github/workflows/red-galaxy-next.yml` fájlban.
+A mellékelt munkafolyamat ezt az elrendezést feltételezi. Sikeres fordítás,
+lint és aláírás-ellenőrzés után fejlesztői előzetes kiadást publikál,
+közvetlen APK-letöltéssel.
+
+[APK letöltése](https://github.com/Zalan21321/red-galaxy-updates/releases/download/next-dev-38222101946/RedGalaxyNext-0.1.0-dev.apk)
+
+[Sikeres fordítás](https://github.com/Zalan21321/red-galaxy-updates/actions/runs/38222101946)
+
+SHA-256: `069caf5eb20ab50a33bd2d5050d7024359a9a53a889da9c239058cc4d961bc77`.
 
 ## A további fejlesztéshez tisztázandó
 
@@ -35,5 +44,5 @@ A munkafolyamat még nem futott. Nyilvános kiadást nem publikál.
 - A céltelefon Android-verziója és a játék vezérlőinek elrendezése.
 - A kívánt NPC-nevek; a korábbi 39 elemű lista nem áll rendelkezésre.
 
-Az APK fordítását jelenleg a fejlesztői környezetből hiányzó Android SDK
-és a nem működő hálózati proxy akadályozza.
+A helyi környezet Android SDK és hálózati kapcsolat hiányában nem tud
+fordítani; a működő fordítás a GitHub Actions környezetben történik.
