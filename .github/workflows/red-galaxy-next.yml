@@ -7,7 +7,7 @@ on:
       - 'red-galaxy-next/**'
       - '.github/workflows/red-galaxy-next.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,13 +21,31 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+          log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
       - name: Compile and lint
         run: gradle --no-daemon assembleDebug lintDebug
+      - name: Verify APK
+        run: |
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose app/build/outputs/apk/debug/app-debug.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging app/build/outputs/apk/debug/app-debug.apk
+          cp app/build/outputs/apk/debug/app-debug.apk RedGalaxyNext-0.1.0-dev.apk
+          sha256sum RedGalaxyNext-0.1.0-dev.apk > RedGalaxyNext-0.1.0-dev.apk.sha256
       - uses: actions/upload-artifact@v4
         with:
           name: RedGalaxyNext-development-apk
           path: red-galaxy-next/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+      - name: Provide direct APK download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "next-dev-${GITHUB_RUN_ID}" \
+            RedGalaxyNext-0.1.0-dev.apk RedGalaxyNext-0.1.0-dev.apk.sha256 \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title 'Red Galaxy Next 0.1.0 – fejlesztői alap' \
+            --notes-file RELEASE-NOTES.md --prerelease --latest=false
